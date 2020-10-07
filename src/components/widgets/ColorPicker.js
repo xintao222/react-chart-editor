@@ -74,12 +74,7 @@ class ColorPicker extends Component {
     // expect from user data.
     const selectedColor = tinycolor(this.props.selectedColor);
     const colorText = selectedColor.toHexString();
-
-    // Convert rgba to rgb if necessary
-    const rgbString =
-      selectedColor._a !== 0
-        ? selectedColor.toRgbString()
-        : `rgb(${selectedColor._r},${selectedColor._g},${selectedColor._b})`;
+    const rgbString = selectedColor.toRgbString();
 
     // We need inline style here to assign the background color
     // dynamically.
